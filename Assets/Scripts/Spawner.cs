@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Exakt samma script som BoosterSpawner med har inte yield return före while
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] obstacles;

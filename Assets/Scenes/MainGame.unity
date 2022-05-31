@@ -268,8 +268,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f34ad8ef2fabd746960afbad32a1cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: 32
-  jumpMulti: 6000
+  _jumpForce: 500
+  _checkRadius: 1
+  _groundChecker: {fileID: 749462957}
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  jumpIterationCount: 500
 --- !u!212 &217892081
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -332,7 +337,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.116, y: -3.2129, z: 0}
   m_LocalScale: {x: 0.5025, y: 0.4748, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 749462957}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -362,6 +368,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.229348, y: 4.7682524}
   m_EdgeRadius: 0
+--- !u!1 &749462956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 749462957}
+  m_Layer: 0
+  m_Name: GroundChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &749462957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749462956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.1, y: -2.13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 217892082}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1358769624
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,8 +496,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358769624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5658, y: -3.1, z: 0}
-  m_LocalScale: {x: 4.4784093, y: 13.06831, z: 1}
+  m_LocalPosition: {x: 1.1644, y: -3.1, z: 0}
+  m_LocalScale: {x: 4.6123137, y: 13.06831, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -537,7 +573,7 @@ GameObject:
   - component: {fileID: 1976035607}
   - component: {fileID: 1976035606}
   - component: {fileID: 1976035605}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

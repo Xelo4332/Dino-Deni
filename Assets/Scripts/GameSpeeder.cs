@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Deni
 public class GameSpeeder : MonoBehaviour
 {
     [SerializeField] private float maxSpeed;
