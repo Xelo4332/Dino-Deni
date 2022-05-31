@@ -8,12 +8,14 @@ public class Deni : MonoBehaviour
     private bool isGrounded;
     [SerializeField]
     private KeyCode jump;
+    private AudioSource jumpSound;
     // Start is called before the first frame update
     [SerializeField]
     float jumpMulti;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        jumpSound = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -22,6 +24,7 @@ public class Deni : MonoBehaviour
         if (Input.GetKeyDown(jump) && isGrounded)
         {
             rb.AddForce(Vector2.up * jumpMulti);
+            jumpSound.Play();
         }
     }
     
