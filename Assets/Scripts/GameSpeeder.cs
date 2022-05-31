@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameSpeeder : MonoBehaviour
 {
     [SerializeField] private float maxSpeed;
-    private float speedBoostInterval = 1.0f;
+    private float speedBoostInterval = 2.0f;
 
     private void Start()
     {
