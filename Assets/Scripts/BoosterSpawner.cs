@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class BoosterSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] obstacles;
+    [SerializeField] private Booster[] boosters;
     [SerializeField] private float minSpawnInterval;
     [SerializeField] private float maxSpawnInterval;
 
@@ -16,15 +16,14 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator Spawn()
     {
+        yield return new WaitForSeconds(10);
         while (true)
         {
             float spawnInterval = Random.Range(minSpawnInterval, maxSpawnInterval);
-            int randomObstacleIndex = Random.Range(0, obstacles.Length);
+            int randomBoosterIndex = Random.Range(0, boosters.Length);
             yield return new WaitForSeconds(spawnInterval);
-            GameObject obstacle = Instantiate(obstacles[randomObstacleIndex], transform.position, Quaternion.identity);
-            Destroy(obstacle, 5);
+            GameObject booster = Instantiate(boosters[randomBoosterIndex].gameObject, transform.position, Quaternion.identity);
+            Destroy(booster, 5);
         }
     }
-
 }
-
