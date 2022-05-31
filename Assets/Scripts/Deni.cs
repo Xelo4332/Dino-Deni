@@ -8,6 +8,7 @@ public class Deni : MonoBehaviour //Simon och Deni
     [SerializeField] private float _checkRadius;
     [SerializeField] private Transform _groundChecker;
     [SerializeField] private LayerMask _groundLayer;
+    private AudioSource jumpSound;
     private bool isJump;
     private int jumpIteration;
     [SerializeField] private int jumpIterationCount;
@@ -17,7 +18,7 @@ public class Deni : MonoBehaviour //Simon och Deni
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        
+        jumpSound = GetComponent<AudioSource>();
        
 
     }
@@ -29,6 +30,7 @@ public class Deni : MonoBehaviour //Simon och Deni
             if (_isGround)
             { 
                 isJump = true;
+                jumpSound.Play();
             }
 
         }
