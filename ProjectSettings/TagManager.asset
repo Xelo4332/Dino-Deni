@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Stenstam
+  - Enemy
   layers:
   - Default
   - TransparentFX

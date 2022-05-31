@@ -24,7 +24,7 @@ public class Deni : MonoBehaviour //Simon och Deni
     //Hop methoden, om man trycker W då kommer karaktären hoppa. Men att hoppa måste man ha is jump true- Simon
     private void Jump()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.Space))
         {
             if (_isGround)
             { 
